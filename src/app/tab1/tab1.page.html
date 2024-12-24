@@ -1,17 +1,52 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title>Teachable Machine</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Teachable Machine</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+  <!-- CARGA DE IMAGEN -->
+  <ion-card *ngIf="imageReady()">
+    <img [src]="imageUrl()" alt="Imagen seleccionada" />
+    <!-- CARGA DE PREDICCIÓN - INICIO -->
+    <div *ngIf="modelLoaded()" class="ion-text-center ion-padding-top ion-padding-bottom">
+      <ion-button fill="outline" color="success" (click)="predict()">Predecir</ion-button>
+    </div>
+
+    <ion-list *ngIf="predictions.length > 0">
+      <ion-item *ngFor="let item of predictions">
+        <ion-label>{{ item?.className }}: {{ item?.probability | percent }}</ion-label>
+      </ion-item>
+    </ion-list>
+    <!-- CARGA DE PREDICCIÓN - FIN -->
+  </ion-card>
+
+  <!-- INPUT OCULTO -->
+  <input
+    #fileInput
+    type="file"
+    accept="image/*"
+    (change)="onFileSelected($event)"
+    hidden
+  />
+
+  <!-- BOTÓN FAB -->
+  <input
+  #fileInput
+  type="file"
+  accept="image/*"
+  (change)="onFileSelected($event)"
+  hidden
+/>
+<ion-fab slot="fixed" vertical="bottom" horizontal="center">
+  <ion-fab-button (click)="fileInput.click()">
+    <ion-icon name="cloud-upload-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+

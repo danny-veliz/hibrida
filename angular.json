@@ -32,7 +32,8 @@
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
-            "scripts": []
+            "scripts": ["src/assets/javascript/tf.min.js",
+              "src/assets/javascript/teachablemachine-image.min.js"]
           },
           "configurations": {
             "production": {
@@ -83,7 +84,8 @@
               "progress": false
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "development",
+           "Content-Security-Policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -107,7 +109,8 @@
               }
             ],
             "styles": ["src/global.scss", "src/theme/variables.scss"],
-            "scripts": []
+            "scripts": ["src/assets/javascript/tf.min.js",
+              "src/assets/javascript/teachablemachine-image.min.js"]
           },
           "configurations": {
             "ci": {
