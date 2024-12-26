@@ -65,6 +65,19 @@ export class Tab1Page  {
       alert('Error al realizar la predicción.');
     }
   }
+  getRecommendation(className: string): string {
+    const recommendations: { [key: string]: string } = {
+      'Plastico': 'Limpia los envases de plástico y colócalos en el contenedor amarillo.',
+      'Papel': 'Recoge el papel usado y deposítalo en el contenedor azul.',
+      'Organico': 'Utiliza los restos orgánicos para hacer compostaje si es posible.',
+      'Vidrio': 'Lava los frascos de vidrio y deposítalos en el contenedor verde.',
+      'Metal': 'Separa las latas y colócalas en el contenedor amarillo.',
+      'Otro': 'Consulta los puntos de reciclaje locales para este tipo de material.'
+    };
+  
+    return recommendations[className] || 'No hay una recomendación específica para este material.';
+  }
+  
   
   
 

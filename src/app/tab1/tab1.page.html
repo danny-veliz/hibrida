@@ -14,16 +14,19 @@
   <!-- CARGA DE IMAGEN -->
   <ion-card *ngIf="imageReady()">
     <img #image [src]="imageUrl()" alt="Imagen seleccionada" />
-    
+
     <!-- Botón Predecir -->
     <div *ngIf="modelLoaded()" class="ion-text-center ion-padding-top ion-padding-bottom">
-      <ion-button fill="outline" (click)="predict()">Predecir</ion-button>
+      <ion-button fill="outline" (click)="predict()">Sort</ion-button>
     </div>
 
     <!-- Lista de predicciones -->
     <ion-list>
       <ion-item *ngFor="let item of predictions; let i = index">
-        <ion-label>{{ item?.className }}: {{ item?.probability | percent }}</ion-label>
+        <ion-label>
+          <div>{{ item?.className }}: {{ item?.probability | percent }}</div>
+          <div class="recommendation">{{ getRecommendation(item?.className) }}</div>
+        </ion-label>
       </ion-item>
     </ion-list>
   </ion-card>
