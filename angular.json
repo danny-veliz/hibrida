@@ -65,9 +65,7 @@
               "sourceMap": true,
               "namedChunks": true
             },
-            "ci": {
-              "progress": false
-            }
+            "ci": {}
           },
           "defaultConfiguration": "production"
         },
@@ -81,11 +79,10 @@
               "buildTarget": "app:build:development"
             },
             "ci": {
-              "progress": false
             }
           },
-          "defaultConfiguration": "development",
-           "Content-Security-Policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+          "defaultConfiguration": "development"
+          
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",

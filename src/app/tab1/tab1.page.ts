@@ -14,11 +14,12 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['tab1.page.scss'],
   standalone: true,
   imports: [CommonModule,IonCardContent, IonButton, IonList, IonItem, IonLabel, PercentPipe,IonFab, IonFabButton, IonIcon, IonCard,IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
+  providers: [TeachablemachineService],
 })
 export class Tab1Page  {
   @ViewChild('image', { static: false }) imageElement!: ElementRef<HTMLImageElement>;
   imageReady = signal(false);
-  imageUrl = signal('https://teachablemachine.withgoogle.com/models/<ID-MODELO>/');
+  imageUrl = signal('https://teachablemachine.withgoogle.com/models/JR2Xl_786/');
   modelLoaded = signal(false);
   classLabels: string[] = [];
   predictions: any[] = [];
@@ -47,16 +48,24 @@ export class Tab1Page  {
 
       reader.readAsDataURL(file);
     }
+    console.log('Imagen cargada:', this.imageUrl());
+
   }
   async predict() {
     try {
-        const image = this.imageElement.nativeElement;
-        this.predictions = await this.teachablemachine.predict(image);
+      const image = this.imageElement.nativeElement;
+      if (!image.src) {
+        alert('Selecciona una imagen antes de predecir.');
+        return;
+      }
+      this.predictions = await this.teachablemachine.predict(image);
+      console.log('Predicciones:', this.predictions);
     } catch (error) {
-        console.error(error);
-        alert('Error al realizar la predicción.');
+      console.error('Error al predecir:', error);
+      alert('Error al realizar la predicción.');
     }
-}
+  }
+  
   
 
 }

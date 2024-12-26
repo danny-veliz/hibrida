@@ -1,13 +1,74 @@
 img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  ion-button {
-    margin: 20px auto;
-    display: block;
-  }
-  
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centrar imagen */
+}
+
+ion-button {
+  margin: 20px auto;
+  display: block;
+  --border-radius: 20px; /* Botón redondeado */
+  --background: linear-gradient(45deg,#74d19ef8, #26bf94); /* Fondo degradado */
+  --color: #ffffff; /* Texto blanco */
+}
+
+ion-title {
+  text-align: center; /* Centrar el texto */
+  font-size: 1.5rem; /* Ajustar el tamaño */
+  font-weight: bold; /* Negrita */
+  color: #3a86ff; /* Cambiar color del texto */
+}
+
+ion-toolbar {
+  background: linear-gradient(45deg, #00c9a7, #92fe9d); /* Fondo verde degradado */
+  color: #ffffff; /* Color del texto */
+}
+
+ion-card {
+  margin: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 12px; /* Bordes redondeados */
+}
+
+ion-label {
+  font-size: 1rem; /* Tamaño del texto */
+  font-weight: 500; /* Peso medio */
+  color: #333333; /* Color gris oscuro */
+}
+ion-card {
+  margin: 20px; /* Espaciado externo */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 16px; /* Bordes redondeados */
+  background: #ffffff; /* Fondo blanco */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border: 1px solid #e0e0e0; /* Borde ligero */
+}
+
+ion-list {
+  margin: 0;
+  padding: 0;
+}
+
+ion-item {
+  background: #f9f9f9; /* Fondo claro */
+  margin: 8px 0; /* Separación entre ítems */
+  padding: 10px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra suave */
+  border: 1px solid #e0e0e0; /* Borde ligero */
+}
+
+ion-label {
+  font-size: 1.1rem; /* Tamaño del texto */
+  font-weight: bold; /* Negrita */
+  color: #333333; /* Color gris oscuro */
+}
+
+.prediction-percentage {
+  font-size: 1rem; /* Tamaño del texto */
+  font-weight: 400; /* Peso normal */
+  color: #757575; /* Color gris claro */
+}
+

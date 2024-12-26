@@ -1,9 +1,27 @@
 .titulo {
-    color: var(--ion-color-primary);
-      font-weight: bold;
-      text-align: center;
-  }
- 
-  p#descripcion {
-    text-align: justify;
-  }
+  text-align: center; /* Centrar el título */
+  font-size: 1.6rem; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  color:  #f0f0f0 /* Usa el color primario o un azul por defecto */
+}
+
+#descripcion {
+  text-align: justify; /* Justificar el texto */
+  font-size: 1rem; /* Tamaño de fuente */
+  line-height: 1.6; /* Altura de línea */
+  color: #555555; /* Color del texto */
+}
+
+ion-card {
+  margin: 20px; /* Espaciado externo */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background: #f8f9fa; /* Fondo claro */
+}
+
+ion-card-header {
+  background: #3a86ff; /* Fondo del encabezado */
+  color: #ffffff; /* Color del texto */
+  border-radius: 12px 12px 0 0; /* Bordes redondeados superiores */
+  padding: 10px; /* Espaciado interno */
+}

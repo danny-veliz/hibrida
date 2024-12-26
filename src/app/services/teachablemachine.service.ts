@@ -5,38 +5,41 @@ import { Injectable } from '@angular/core';
 })
 export class TeachablemachineService {
 
-  private URL = "https://teachablemachine.withgoogle.com/models/<ID-MODELO>/"
-  private model: any;
-  private classLabels: string[] = [];
+    private URL = "https://teachablemachine.withgoogle.com/models/JR2Xl_786/"
+    private model: any;
+    private classLabels: string[] = [];
 
 
-  constructor() { }
+    constructor() { }
 
-  async loadModel() {
-      try {
-          const modelURL = this.URL + 'model.json';
-          const metadataURL = this.URL + 'metadata.json';
+    async loadModel() {
+        try {
+            const modelURL = this.URL + 'model.json';
+            const metadataURL = this.URL + 'metadata.json';
 
-          const tmImage = (window as any).tmImage;
-          this.model = await tmImage.load(modelURL, metadataURL);
-          this.classLabels = this.model.getClassLabels();
+            const tmImage = (window as any).tmImage;
+            this.model = await tmImage.load(modelURL, metadataURL);
+            this.classLabels = this.model.getClassLabels();
+            console.log('Modelo cargado correctamente:', this.model);
 
-      } catch (error) {
-          console.error('Error al cargar el modelo:', error);
-          throw new Error('No se pudo cargar el modelo.');
-      }
-  }
 
-  getClassLabels(): string[] {
-      return this.classLabels;
-  }
-  async predict(imageElement: HTMLImageElement): Promise<any[]> {
-
-    if (!this.model) {
-        throw new Error('El modelo no está cargado.');
+        } catch (error) {
+            console.error('Error al cargar el modelo:', error);
+            throw new Error('No se pudo cargar el modelo.');
+        }
     }
 
-    return await this.model.predict(imageElement);
-}
+    getClassLabels(): string[] {
+        return this.classLabels;
+    }
+      /* Método para la predicción a partir de la imagen */
+      async predict(imageElement: HTMLImageElement): Promise<any[]> {
+
+        if (!this.model) {
+            throw new Error('El modelo no está cargado.');
+        }
+
+        return await this.model.predict(imageElement);
+    }
 
 }
