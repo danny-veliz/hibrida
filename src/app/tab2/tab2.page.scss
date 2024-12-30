@@ -1,0 +1,68 @@
+/* Estilo general para los ion-cards */
+ion-card {
+    margin: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    border-radius: 12px; /* Bordes redondeados */
+    background: #ffffff; /* Fondo blanco */
+  }
+  
+  /* Estilo para el título de los ion-card */
+  ion-card-title {
+    color: #3a86ff; /* Azul destacado */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrar el texto */
+    font-size: 1.2rem; /* Tamaño del texto */
+  }
+  
+  /* Estilo para el formulario */
+  ion-textarea {
+    border: 1px solid #e0e0e0; /* Borde ligero */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Espaciado externo */
+  }
+  
+  ion-select {
+    border: 1px solid #e0e0e0; /* Borde ligero */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    margin: 10px 0; /* Espaciado externo */
+  }
+  
+  /* Estilo para el botón */
+  ion-button {
+    margin-top: 10px;
+    --background: #00c9a7; /* Fondo verde */
+    --background-hover: #92fe9d; /* Fondo verde claro al pasar */
+    --color: #ffffff; /* Texto blanco */
+    font-weight: bold; /* Texto en negrita */
+    border-radius: 20px; /* Bordes redondeados */
+  }
+  
+  /* Estilo para la lista de sugerencias */
+  ion-list {
+    margin: 0;
+    padding: 0;
+  }
+  
+  ion-item {
+    background: #f9f9f9; /* Fondo claro */
+    margin: 8px 0; /* Separación entre ítems */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Sombra ligera */
+    border: 1px solid #e0e0e0; /* Borde ligero */
+  }
+  
+  ion-label {
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: 500; /* Peso medio */
+    color: #333333; /* Texto gris oscuro */
+  }
+  
+  ion-label div {
+    margin-bottom: 5px; /* Espaciado entre líneas de texto */
+  }
+  
+  
+  

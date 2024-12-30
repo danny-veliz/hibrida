@@ -11,7 +11,6 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 /* Importe el servicio */
 import { ProviderService } from '../services/provider.service';
 
-
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
@@ -22,33 +21,42 @@ import { ProviderService } from '../services/provider.service';
     IonList, IonItem, IonLabel, IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent]
 })
 export class Tab2Page {
-
-  collectionName = 'reviews';
+  
+  collectionName = 'suggestions';
   /* Arreglo con datos locales */
-  dataList: any[] = [];
+  suggestionsList: any[] = [];
+
   constructor(private providerService: ProviderService) { }
 
-  myForm: FormGroup = new FormGroup({
-    score: new FormControl("", Validators.required),
-    opinion: new FormControl("", Validators.required)
+  /* Formulario reactivo */
+  suggestionForm: FormGroup = new FormGroup({
+    rating: new FormControl("", Validators.required),
+    suggestion: new FormControl("", Validators.required)
   });
-  /* El método onSubmit para enviar los datos del formulario mediante el servicio */
-  onSubmit() {
-    this.providerService.createDocument(this.collectionName, this.myForm.value).then(() => {
-      this.myForm.reset()
-    });
-  };
-    /* Al inicializar, carga los datos  */
-    ngOnInit() {
-      this.loadData();
-    }
-    loadData() {
-      this.providerService.readCollection(this.collectionName).subscribe((data) => {
-        this.dataList = data;
+
+  /* Método para enviar las sugerencias mediante el servicio */
+  onSubmitSuggestion() {
+    if (this.suggestionForm.valid) {
+      const suggestionData = {
+        rating: this.suggestionForm.value.rating,
+        text: this.suggestionForm.value.suggestion
+      };
+
+      this.providerService.createDocument(this.collectionName, suggestionData).then(() => {
+        this.suggestionForm.reset(); // Resetea el formulario después de enviar
       });
     }
- 
-  /* Nombre de la colección */
+  }
 
+  /* Al inicializar, carga las sugerencias desde el servicio */
+  ngOnInit() {
+    this.loadSuggestions();
+  }
 
+  /* Método para cargar las sugerencias desde la base de datos */
+  loadSuggestions() {
+    this.providerService.readCollection(this.collectionName).subscribe((data) => {
+      this.suggestionsList = data;
+    });
+  }
 }
