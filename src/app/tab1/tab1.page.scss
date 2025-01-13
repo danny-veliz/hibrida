@@ -22,14 +22,15 @@ ion-title {
 }
 
 ion-toolbar {
-  background: linear-gradient(45deg, #00c9a7, #92fe9d); /* Fondo verde degradado */
-  color: #ffffff; /* Color del texto */
+  background: var(--color-primary); /* Fondo verde principal */
+  color: var(--color-background);
 }
 
 ion-card {
   margin: 16px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
   border-radius: 12px; /* Bordes redondeados */
+  background: var(--color-background);
 }
 
 ion-label {
@@ -74,7 +75,18 @@ ion-label {
 .recommendation {
   font-size: 0.9rem;
   font-style: italic;
-  color: #3a86ff; /* Color destacado */
+  color: green; /* Color destacado */
   margin-top: 4px;
 }
 
+.custom-icon {
+  --color: var(--ion-color-accent); /* Color específico */
+  font-size: 28px; /* Tamaño específico */
+}
+
+.fondo{
+  background-image: url('../image/fondo1.jpg');
+  background-repeat: repeat-y;
+  background-size: 100%;
+
+}

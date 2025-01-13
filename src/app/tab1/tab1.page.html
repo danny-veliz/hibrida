@@ -1,18 +1,17 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>EcoSort 🌍♻️</ion-title>
+  <ion-toolbar style="--ion-background-color: linear-gradient(50deg,#5D8736, #809D3C);--ion-text-color: white">
+    <ion-title >EcoSort 🌍♻️</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" >
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">EcoSort 🌍♻️</ion-title>
+    <ion-toolbar >
+      <ion-title size="large" >EcoSort 🌍♻️</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <!-- CARGA DE IMAGEN -->
-  <ion-card *ngIf="imageReady()">
+  <ion-card *ngIf="imageReady()" >
     <img #image [src]="imageUrl()" alt="Imagen seleccionada" />
 
     <!-- Botón Predecir -->
@@ -43,7 +42,7 @@
   <!-- BOTÓN FAB -->
   <ion-fab slot="fixed" vertical="bottom" horizontal="center">
     <ion-fab-button (click)="fileInput.click()">
-      <ion-icon name="cloud-upload-outline"></ion-icon>
+      <ion-icon name="cloud-upload-outline" ></ion-icon>
     </ion-fab-button>
   </ion-fab>
 </ion-content>

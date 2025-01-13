@@ -35,3 +35,19 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import '@ionic/angular/css/palettes/dark.system.css';
+
+:root {
+    --color-primary: #5D8736;
+    --color-secondary: #809D3C;
+    --color-accent: #A9C46C;
+    --color-background: #F4FFC3;
+    --color-text: #333333; /* Ejemplo de color para el texto */
+    --ion-background-color: #F4FFC3;
+    
+  }
+
+.custom-icon {
+    --color: var(--ion-color-accent); /* Color específico */
+    font-size: 28px; /* Tamaño específico */
+    background-color: #5D8736;
+  }
